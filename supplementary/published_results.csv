@@ -1,0 +1,11 @@
+method,backbone,AID->UCM,UCM->AID,AID->DFC15,UCM->DFC15,source
+ResNet-101 (source only),ResNet-101,57.5,51.7,56.9,66.4,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2 (their re-implementation)"
+ML-GCN,ResNet-101,53.7,51.3,58.9,64.6,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2"
+ML-AGCN,TResNet-M,55.2,52.1,51.6,70.3,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2"
+ASL (source only),TResNet-M,55.4,54.1,56.1,68.9,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2 (their re-implementation)"
+DANN,TResNet-M,52.5,51.6,43.0,64.1,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2 (their re-implementation)"
+DALN,TResNet-M,53.1,53.2,44.7,65.6,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2 (their re-implementation)"
+DA-MAIC,TResNet-M,54.4,50.5,55.4,65.8,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2 (their re-implementation, with ASL)"
+DDA-MLIC,TResNet-M,63.2,54.9,62.1,70.6,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2"
+DA-AGCN,TResNet-M,59.0,57.2,65.7,76.5,"Singh et al., ML-AGCN (CVIU 2024), Tables 6-7"
+DDA-MLIC + DeepEM,TResNet-M,60.5,56.2,63.2,73.1,"Singh et al., arXiv:2505.14333 (2025), Tables 1-2"

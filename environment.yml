@@ -1,0 +1,13 @@
+name: clab
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - matplotlib
+  - openpyxl
+  - pip
+  - pip:
+      # uncomment for feature extraction (install the CUDA build of torch first)
+      # - -r requirements-extract.txt

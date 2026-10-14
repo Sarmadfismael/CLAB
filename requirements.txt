@@ -1,0 +1,5 @@
+# Reproducing every table from the cached features (CPU only)
+numpy>=1.21
+pandas>=1.4
+matplotlib>=3.5        # tools/make_fig_anchors.py only
+openpyxl>=3.0          # experiments/e10_dataset_stats.py (UC Merced labels are XLSX)

@@ -1,0 +1,4 @@
+anchor_set,dfc15_zero_shot_mAP_all_images,mean_pairwise_cos
+six evaluated categories (used),70.94702592739651,-0.1970536857843399
+"all seventeen, six retained",71.56407710460661,-0.08480361104011536
+none (raw anchors),61.78187953642852,0.8958693146705627

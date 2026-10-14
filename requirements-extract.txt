@@ -1,0 +1,12 @@
+# Feature extraction, prompt ablation and backbone study (GPU recommended)
+-r requirements.txt
+torch>=1.12
+torchvision>=0.13
+open_clip_torch>=2.20
+huggingface_hub>=0.16
+timm>=0.9              # TResNet-M (backbone study)
+rshf                   # SatMAE (backbone study)
+scikit-learn>=1.0      # backbone study metric
+Pillow>=9.0
+ftfy
+regex
