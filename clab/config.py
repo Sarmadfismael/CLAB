@@ -37,7 +37,7 @@ ORDER = list(SETTINGS)
 # ---------------------------------------------------------------- backbones
 # Feature-file prefix -> how the frozen encoder is obtained (see extraction/backbones.py).
 BACKBONES = {
-    "clip_vitb32_control": dict(kind="open_clip", model="ViT-B-32", pretrained="openai",
+    "clip_vitb32_control": dict(kind="open_clip", model="ViT-B-32-quickgelu", pretrained="openai",
                                 note="CLIP ViT-B/32, original OpenAI weights (headline)"),
     "remoteclip_vitb32": dict(kind="open_clip_hf", model="ViT-B-32",
                               repo="chendelong/RemoteCLIP",

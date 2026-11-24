@@ -1,0 +1,258 @@
+[
+ {
+  "setting": "AID->UCM",
+  "image_id": "beach36",
+  "truth": [
+   "sand",
+   "sea"
+  ],
+  "clip": [
+   "bare-soil",
+   "cars",
+   "grass",
+   "pavement",
+   "trees",
+   "water"
+  ],
+  "probe": [
+   "chaparral",
+   "sand",
+   "sea"
+  ],
+  "clab": [
+   "sand",
+   "sea"
+  ],
+  "f1_clip": 0.0,
+  "f1_probe": 0.8,
+  "f1_clab": 1.0,
+  "g": 1.0,
+  "l": -0.19999999999999996
+ },
+ {
+  "setting": "AID->UCM",
+  "image_id": "beach83",
+  "truth": [
+   "sand",
+   "sea"
+  ],
+  "clip": [
+   "bare-soil",
+   "cars",
+   "grass",
+   "pavement",
+   "trees"
+  ],
+  "probe": [
+   "chaparral",
+   "sand",
+   "sea"
+  ],
+  "clab": [
+   "sand",
+   "sea"
+  ],
+  "f1_clip": 0.0,
+  "f1_probe": 0.8,
+  "f1_clab": 1.0,
+  "g": 1.0,
+  "l": -0.19999999999999996
+ },
+ {
+  "setting": "AID->UCM",
+  "image_id": "storagetanks87",
+  "truth": [
+   "bare-soil",
+   "pavement",
+   "tanks"
+  ],
+  "clip": [
+   "bare-soil",
+   "buildings",
+   "cars",
+   "grass",
+   "pavement",
+   "trees"
+  ],
+  "probe": [
+   "bare-soil"
+  ],
+  "clab": [],
+  "f1_clip": 0.4444444444,
+  "f1_probe": 0.5,
+  "f1_clab": 0.0,
+  "g": -0.4444444444,
+  "l": 0.5
+ },
+ {
+  "setting": "UCM->AID",
+  "image_id": "forest_53",
+  "truth": [
+   "trees"
+  ],
+  "clip": [
+   "bare-soil",
+   "buildings",
+   "cars",
+   "chaparral",
+   "grass",
+   "pavement",
+   "sand",
+   "sea",
+   "trees",
+   "water"
+  ],
+  "probe": [
+   "trees"
+  ],
+  "clab": [
+   "trees"
+  ],
+  "f1_clip": 0.1818181818,
+  "f1_probe": 1.0,
+  "f1_clab": 1.0,
+  "g": 0.8181818182,
+  "l": 0.0
+ },
+ {
+  "setting": "UCM->AID",
+  "image_id": "forest_50",
+  "truth": [
+   "trees"
+  ],
+  "clip": [
+   "bare-soil",
+   "buildings",
+   "cars",
+   "chaparral",
+   "grass",
+   "pavement",
+   "sand",
+   "sea",
+   "trees"
+  ],
+  "probe": [
+   "field",
+   "trees"
+  ],
+  "clab": [
+   "trees"
+  ],
+  "f1_clip": 0.2,
+  "f1_probe": 0.6666666667000001,
+  "f1_clab": 1.0,
+  "g": 0.8,
+  "l": -0.3333333332999999
+ },
+ {
+  "setting": "UCM->AID",
+  "image_id": "forest_34",
+  "truth": [
+   "trees"
+  ],
+  "clip": [
+   "bare-soil",
+   "chaparral",
+   "grass",
+   "pavement",
+   "trees"
+  ],
+  "probe": [
+   "trees"
+  ],
+  "clab": [
+   "bare-soil",
+   "grass",
+   "trees"
+  ],
+  "f1_clip": 0.33333333330000003,
+  "f1_probe": 1.0,
+  "f1_clab": 0.5,
+  "g": 0.16666666669999997,
+  "l": 0.5
+ },
+ {
+  "setting": "AID->DFC15",
+  "image_id": "2054",
+  "truth": [
+   "water",
+   "ship"
+  ],
+  "clip": [
+   "water",
+   "grass",
+   "buildings",
+   "trees",
+   "cars"
+  ],
+  "probe": [
+   "water",
+   "ship"
+  ],
+  "clab": [
+   "water",
+   "ship"
+  ],
+  "f1_clip": 0.2857142857,
+  "f1_probe": 1.0,
+  "f1_clab": 1.0,
+  "g": 0.7142857143,
+  "l": 0.0
+ },
+ {
+  "setting": "AID->DFC15",
+  "image_id": "2173",
+  "truth": [
+   "water",
+   "ship"
+  ],
+  "clip": [
+   "water",
+   "grass",
+   "buildings",
+   "trees",
+   "cars"
+  ],
+  "probe": [
+   "water",
+   "ship"
+  ],
+  "clab": [
+   "water",
+   "ship"
+  ],
+  "f1_clip": 0.2857142857,
+  "f1_probe": 1.0,
+  "f1_clab": 1.0,
+  "g": 0.7142857143,
+  "l": 0.0
+ },
+ {
+  "setting": "AID->DFC15",
+  "image_id": "1588",
+  "truth": [
+   "water"
+  ],
+  "clip": [
+   "water",
+   "grass",
+   "buildings",
+   "trees",
+   "cars"
+  ],
+  "probe": [
+   "water"
+  ],
+  "clab": [
+   "water",
+   "grass",
+   "trees",
+   "ship"
+  ],
+  "f1_clip": 0.33333333330000003,
+  "f1_probe": 1.0,
+  "f1_clab": 0.4,
+  "g": 0.06666666669999999,
+  "l": 0.6
+ }
+]

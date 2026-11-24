@@ -1,0 +1,80 @@
+{
+ "loto_gd3000": {
+  "params": [
+   0.1,
+   0.1,
+   0.1,
+   0.1
+  ],
+  "mean_clab": 73.93
+ },
+ "loto_ridge": {
+  "params": [
+   10000.0,
+   10000.0,
+   1000.0,
+   1000.0
+  ],
+  "mean_clab": 73.73
+ },
+ "wd01_minus_gd50_probe": {
+  "AID->UCM": -3.17,
+  "UCM->AID": -0.27,
+  "AID->DFC15": 2.17,
+  "UCM->DFC15": 0.3
+ },
+ "perclassZ": {
+  "AID->UCM": [
+   -1.42,
+   -1.68,
+   -1.16
+  ],
+  "UCM->AID": [
+   -0.33,
+   -0.36,
+   -0.3
+  ],
+  "AID->DFC15": [
+   -0.11,
+   -0.26,
+   0.04
+  ],
+  "UCM->DFC15": [
+   0.0,
+   -0.11,
+   0.11
+  ]
+ },
+ "rho_cv": [
+  0.13,
+  0.61
+ ],
+ "rho_cv_by_setting": {
+  "AID->DFC15": 0.38,
+  "AID->UCM": 0.6,
+  "UCM->AID": 0.35,
+  "UCM->DFC15": 0.14
+ },
+ "fpr_dfc": {
+  "('AID->DFC15', 'clab')": 0.266,
+  "('AID->DFC15', 'clip_zeroshot')": 0.667,
+  "('AID->DFC15', 'probe')": 0.244,
+  "('UCM->DFC15', 'clab')": 0.11,
+  "('UCM->DFC15', 'clip_zeroshot')": 0.246,
+  "('UCM->DFC15', 'probe')": 0.103
+ },
+ "fpr_all": {
+  "('AID->DFC15', 'clab')": 0.266,
+  "('AID->DFC15', 'clip_zeroshot')": 0.667,
+  "('AID->DFC15', 'probe')": 0.244,
+  "('AID->UCM', 'clab')": 0.084,
+  "('AID->UCM', 'clip_zeroshot')": 0.385,
+  "('AID->UCM', 'probe')": 0.087,
+  "('UCM->AID', 'clab')": 0.04,
+  "('UCM->AID', 'clip_zeroshot')": 0.177,
+  "('UCM->AID', 'probe')": 0.041,
+  "('UCM->DFC15', 'clab')": 0.11,
+  "('UCM->DFC15', 'clip_zeroshot')": 0.246,
+  "('UCM->DFC15', 'probe')": 0.103
+ }
+}

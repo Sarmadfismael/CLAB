@@ -1,0 +1,10 @@
+# Extra requirements for the r1/ analyses (the experiments/ scripts need only requirements.txt)
+torch>=2.1          # prompt learning, DDA-MLIC/DANN heads, re-implemented CLIP towers
+open_clip_torch>=2.23
+safetensors
+ftfy
+regex
+scikit-learn        # GMM in the DDA-MLIC discrepancy, AP in the backbone row
+scipy
+matplotlib
+Pillow

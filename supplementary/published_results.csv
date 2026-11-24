@@ -9,3 +9,5 @@ DA-MAIC,TResNet-M,54.4,50.5,55.4,65.8,"Singh et al., DDA-MLIC (WACV 2024), Table
 DDA-MLIC,TResNet-M,63.2,54.9,62.1,70.6,"Singh et al., DDA-MLIC (WACV 2024), Tables 1-2"
 DA-AGCN,TResNet-M,59.0,57.2,65.7,76.5,"Singh et al., ML-AGCN (CVIU 2024), Tables 6-7"
 DDA-MLIC + DeepEM,TResNet-M,60.5,56.2,63.2,73.1,"Singh et al., arXiv:2505.14333 (2025), Tables 1-2"
+CPLG,ResNet-50,71.83,75.57,56.76,57.46,"Huang, Ma and Huang, IEEE JSTARS 17 (2024) 20344-20354, Tables II-V (mean of 10 runs)"
+CPLG + CDAN,ResNet-50,73.86,76.17,58.43,61.63,"Huang, Ma and Huang, IEEE JSTARS 17 (2024) 20344-20354, Tables II-V (mean of 10 runs)"

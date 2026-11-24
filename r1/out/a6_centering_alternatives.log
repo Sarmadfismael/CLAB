@@ -1,0 +1,38 @@
+AID->UCM done
+UCM->AID done
+AID->DFC15 done
+UCM->DFC15 done
+                                               zeroshot                                    clab                              zeroshot   clab
+setting                                      AID->DFC15 AID->UCM UCM->AID UCM->DFC15 AID->DFC15 AID->UCM UCM->AID UCM->DFC15     mean   mean
+variant                                                                                                                                     
+centered (CLAB)                                   70.73    59.74    63.64      70.73      74.18    71.02    73.85      79.15    66.21  74.55
+centered + remove PC1 (all-but-the-top, D=1)      60.40    56.85    61.27      60.40      69.80    69.72    74.05      75.87    59.73  72.36
+centered + remove PC1-2 (D=2)                     56.95    54.01    60.30      56.95      70.10    68.28    74.09      75.98    57.05  72.11
+centered + remove PC1-3 (D=3)                     45.16    48.45    55.07      45.16      66.29    66.73    73.23      74.09    48.46  70.09
+centered + whitening (Lowdin)                     69.86    59.26    63.43      69.86      73.90    70.46    73.99      78.81    65.60  74.29
+image centering (source mean), raw anchors        62.75    40.37    47.84      62.93      73.74    66.48    72.61      79.46    53.47  73.07
+image centering + centered anchors                70.87    59.84    62.11      70.52      74.69    71.36    73.29      79.51    65.84  74.71
+raw                                               64.19    43.18    50.62      64.19      73.93    67.69    73.07      79.47    55.55  73.54
+raw + whitening (Lowdin)                          70.59    58.93    62.60      70.59      74.43    70.46    74.01      79.22    65.68  74.53
+raw, remove PC1 about origin                      70.79    59.71    63.55      70.79      74.26    71.00    73.90      79.16    66.21  74.58
+raw                                              zeroshot vs centered: -16.56 -13.02 -6.53 -6.53
+raw                                              clab     vs centered: -3.32 -0.77 -0.24 +0.32
+raw, remove PC1 about origin                     zeroshot vs centered: -0.03 -0.09 +0.06 +0.06
+raw, remove PC1 about origin                     clab     vs centered: -0.02 +0.05 +0.09 +0.01
+centered + remove PC1 (all-but-the-top, D=1)     zeroshot vs centered: -2.89 -2.37 -10.33 -10.33
+centered + remove PC1 (all-but-the-top, D=1)     clab     vs centered: -1.30 +0.20 -4.38 -3.29
+centered + remove PC1-2 (D=2)                    zeroshot vs centered: -5.74 -3.34 -13.77 -13.77
+centered + remove PC1-2 (D=2)                    clab     vs centered: -2.74 +0.25 -4.07 -3.18
+centered + remove PC1-3 (D=3)                    zeroshot vs centered: -11.30 -8.57 -25.56 -25.56
+centered + remove PC1-3 (D=3)                    clab     vs centered: -4.29 -0.62 -7.88 -5.06
+centered + whitening (Lowdin)                    zeroshot vs centered: -0.49 -0.21 -0.86 -0.86
+centered + whitening (Lowdin)                    clab     vs centered: -0.56 +0.14 -0.27 -0.35
+raw + whitening (Lowdin)                         zeroshot vs centered: -0.82 -1.04 -0.14 -0.14
+raw + whitening (Lowdin)                         clab     vs centered: -0.56 +0.16 +0.26 +0.06
+image centering (source mean), raw anchors       zeroshot vs centered: -19.38 -15.80 -7.98 -7.80
+image centering (source mean), raw anchors       clab     vs centered: -4.54 -1.24 -0.43 +0.31
+image centering + centered anchors               zeroshot vs centered: +0.09 -1.53 +0.15 -0.21
+image centering + centered anchors               clab     vs centered: +0.34 -0.56 +0.52 +0.35
+raw about origin [87.   1.8  1.5] 90.3
+raw about mean [13.7 11.8 10.5] 36.0
+centered about mean [13.2 12.4  8.3] 33.9

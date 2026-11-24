@@ -10,8 +10,8 @@ CANDIDATES = {
     "imagenet21k_tresnet_m": dict(kind="timm", model="tresnet_m.miil_in21k"),  # ImageNet-21K
     "satmae_vitlarge":       dict(kind="rshf", module="satmae", cls="SatMAE",
                                   repo="MVRL/satmae-vitlarge-fmow-pretrain-800"),
-    "clip_rn50_control":     dict(kind="open_clip", model="RN50", pretrained="openai"),
-    "clip_vitb32_control":   dict(kind="open_clip", model="ViT-B-32", pretrained="openai"),
+    "clip_rn50_control":     dict(kind="open_clip", model="RN50-quickgelu", pretrained="openai"),
+    "clip_vitb32_control":   dict(kind="open_clip", model="ViT-B-32-quickgelu", pretrained="openai"),
     "remoteclip_rn50":       dict(kind="open_clip_hf", model="RN50", repo="chendelong/RemoteCLIP",
                                   filename="RemoteCLIP-RN50.pt"),
     "remoteclip_vitb32":     dict(kind="open_clip_hf", model="ViT-B-32",

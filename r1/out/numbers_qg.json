@@ -1,0 +1,1509 @@
+{
+ "main_means": {
+  "zeroshot_raw": 55.55,
+  "zeroshot": 66.21,
+  "probe": 71.65,
+  "clab": 74.55,
+  "clab_raw": 73.54,
+  "clab_long": 72.62,
+  "clab_a02": 74.33,
+  "clab_a04": 74.33
+ },
+ "paired": {
+  "clip AID->UCM": [
+   5.37,
+   4.97,
+   5.77,
+   4.81,
+   5.93
+  ],
+  "clip UCM->AID": [
+   1.03,
+   0.72,
+   1.33,
+   0.72,
+   1.33
+  ],
+  "clip AID->DFC15": [
+   3.61,
+   3.19,
+   4.02,
+   3.06,
+   4.16
+  ],
+  "clip UCM->DFC15": [
+   1.59,
+   1.32,
+   1.85,
+   1.27,
+   1.9
+  ],
+  "remo AID->UCM": [
+   11.44,
+   11.0,
+   11.87,
+   10.8,
+   12.08
+  ],
+  "remo UCM->AID": [
+   1.83,
+   1.65,
+   2.01,
+   1.59,
+   2.08
+  ],
+  "remo AID->DFC15": [
+   9.29,
+   8.79,
+   9.79,
+   8.57,
+   10.01
+  ],
+  "remo UCM->DFC15": [
+   1.73,
+   1.48,
+   1.98,
+   1.42,
+   2.04
+  ]
+ },
+ "boot": [
+  {
+   "backbone": "clip_vitb32_control",
+   "setting": "AID->UCM",
+   "n_images": 2100,
+   "delta": 5.327,
+   "lo": 4.535,
+   "hi": 6.189,
+   "p_le0": 0.0
+  },
+  {
+   "backbone": "clip_vitb32_control",
+   "setting": "UCM->AID",
+   "n_images": 3000,
+   "delta": 0.891,
+   "lo": 0.547,
+   "hi": 1.291,
+   "p_le0": 0.0
+  },
+  {
+   "backbone": "clip_vitb32_control",
+   "setting": "AID->DFC15",
+   "n_images": 2190,
+   "delta": 3.514,
+   "lo": 2.551,
+   "hi": 4.421,
+   "p_le0": 0.0
+  },
+  {
+   "backbone": "clip_vitb32_control",
+   "setting": "UCM->DFC15",
+   "n_images": 2190,
+   "delta": 1.538,
+   "lo": 0.938,
+   "hi": 2.119,
+   "p_le0": 0.0
+  },
+  {
+   "backbone": "remoteclip_vitb32",
+   "setting": "AID->UCM",
+   "n_images": 2100,
+   "delta": 11.496,
+   "lo": 10.976,
+   "hi": 11.977,
+   "p_le0": 0.0
+  },
+  {
+   "backbone": "remoteclip_vitb32",
+   "setting": "UCM->AID",
+   "n_images": 3000,
+   "delta": 1.74,
+   "lo": 1.473,
+   "hi": 2.056,
+   "p_le0": 0.0
+  },
+  {
+   "backbone": "remoteclip_vitb32",
+   "setting": "AID->DFC15",
+   "n_images": 2190,
+   "delta": 9.662,
+   "lo": 8.784,
+   "hi": 10.458,
+   "p_le0": 0.0
+  },
+  {
+   "backbone": "remoteclip_vitb32",
+   "setting": "UCM->DFC15",
+   "n_images": 2190,
+   "delta": 1.669,
+   "lo": 1.176,
+   "hi": 2.129,
+   "p_le0": 0.0
+  }
+ ],
+ "baselines": [
+  {
+   "setting": "AID->UCM",
+   "cfg": "clip_adapter|centred|0.2|0.001|200",
+   "base": 65.26,
+   "delta": [
+    5.76,
+    4.88,
+    6.64
+   ]
+  },
+  {
+   "setting": "UCM->AID",
+   "cfg": "clip_adapter|centred|0.2|0.001|200",
+   "base": 67.27,
+   "delta": [
+    6.57,
+    6.09,
+    7.06
+   ]
+  },
+  {
+   "setting": "AID->DFC15",
+   "cfg": "tip_adapter|centred|0.4|1.0|z|None",
+   "base": 72.58,
+   "delta": [
+    1.59,
+    1.13,
+    2.06
+   ]
+  },
+  {
+   "setting": "UCM->DFC15",
+   "cfg": "clip_adapter|raw|0.2|0.003|200",
+   "base": 75.85,
+   "delta": [
+    3.31,
+    2.71,
+    3.9
+   ]
+  }
+ ],
+ "pooled12_min_lo": 0.72,
+ "tip_centering_gain": [
+  13.55,
+  12.23,
+  8.42,
+  8.69
+ ],
+ "clipad_centering_gain": [
+  6.63,
+  0.06,
+  -9.36,
+  -6.03
+ ],
+ "adapters_below_probe": [
+  "AID->UCM",
+  "UCM->AID",
+  "UCM->DFC15"
+ ],
+ "ablation": {
+  "clab_raw": -3.22,
+  "probe": -4.49,
+  "zeroshot": -6.77,
+  "clab_long": -1.32
+ },
+ "ablation_clip_only": {
+  "clab_raw": -1.01,
+  "probe": -2.9,
+  "zeroshot": -8.34,
+  "clab_long": -1.93
+ },
+ "alpha_mean": {
+  "0.03": 72.14,
+  "0.05": 72.7,
+  "0.08": 73.15,
+  "0.10": 73.51,
+  "0.12": 73.8,
+  "0.15": 74.04,
+  "0.18": 74.19,
+  "0.20": 74.33,
+  "0.23": 74.43,
+  "0.25": 74.5,
+  "0.28": 74.53,
+  "0.30": 74.55,
+  "0.33": 74.55,
+  "0.35": 74.5,
+  "0.38": 74.42,
+  "0.40": 74.33,
+  "0.43": 74.21,
+  "0.45": 74.05,
+  "0.48": 73.87,
+  "0.50": 73.67,
+  "0.53": 73.44,
+  "0.55": 73.18,
+  "0.58": 72.9,
+  "0.60": 72.61,
+  "0.63": 72.29,
+  "0.65": 71.95,
+  "0.68": 71.59,
+  "0.70": 71.23
+ },
+ "probe_mean_robust_standard": 71.65,
+ "robust_worst": {
+  "0.2": 0.45,
+  "0.25": 0.39,
+  "0.3": 0.23,
+  "0.35": -0.01,
+  "0.4": -0.33
+ },
+ "robust_cis": {
+  "AID->UCM": [
+   2.78,
+   2.4,
+   3.17
+  ],
+  "AID->DFC15": [
+   2.91,
+   2.47,
+   3.35
+  ],
+  "UCM->AID": [
+   0.23,
+   -0.04,
+   0.49
+  ],
+  "UCM->DFC15": [
+   1.12,
+   0.79,
+   1.45
+  ],
+  "DFC15->AID": [
+   3.23,
+   2.8,
+   3.66
+  ],
+  "DFC15->UCM": [
+   1.06,
+   0.64,
+   1.48
+  ]
+ },
+ "alpha_gain_range_020_040": 0.22,
+ "thr": {
+  "AID->UCM": {
+   "CF1": [
+    3.48,
+    2.63,
+    4.32
+   ],
+   "OF1": [
+    3.34,
+    2.78,
+    3.89
+   ]
+  },
+  "UCM->AID": {
+   "CF1": [
+    3.05,
+    2.06,
+    4.05
+   ],
+   "OF1": [
+    -0.24,
+    -0.96,
+    0.49
+   ]
+  },
+  "AID->DFC15": {
+   "CF1": [
+    2.1,
+    1.57,
+    2.62
+   ],
+   "OF1": [
+    2.54,
+    1.7,
+    3.37
+   ]
+  },
+  "UCM->DFC15": {
+   "CF1": [
+    4.34,
+    2.28,
+    6.41
+   ],
+   "OF1": [
+    1.23,
+    -0.15,
+    2.61
+   ]
+  }
+ },
+ "thr_card": {
+  "CF1 AID->UCM": [
+   3.79,
+   2.98,
+   4.6
+  ],
+  "CF1 UCM->AID": [
+   -1.27,
+   -1.75,
+   -0.79
+  ],
+  "CF1 AID->DFC15": [
+   2.04,
+   1.74,
+   2.33
+  ],
+  "CF1 UCM->DFC15": [
+   -1.77,
+   -2.24,
+   -1.3
+  ],
+  "OF1 AID->UCM": [
+   -0.49,
+   -0.89,
+   -0.09
+  ],
+  "OF1 UCM->AID": [
+   -3.56,
+   -3.76,
+   -3.36
+  ],
+  "OF1 AID->DFC15": [
+   1.53,
+   1.22,
+   1.84
+  ],
+  "OF1 UCM->DFC15": [
+   -2.26,
+   -2.74,
+   -1.78
+  ]
+ },
+ "backbone_delta_clip": [
+  32.32,
+  32.83,
+  32.0,
+  37.1
+ ],
+ "backbone_delta_rn50": [
+  30.37,
+  25.27,
+  21.54,
+  35.0
+ ],
+ "centering_set": [
+  {
+   "anchor_set": "six evaluated categories (used)",
+   "dfc15_zero_shot_mAP_all_images": 70.75,
+   "mean_pairwise_cos": -0.198
+  },
+  {
+   "anchor_set": "all seventeen, six retained",
+   "dfc15_zero_shot_mAP_all_images": 70.517,
+   "mean_pairwise_cos": -0.085
+  },
+  {
+   "anchor_set": "none (raw anchors)",
+   "dfc15_zero_shot_mAP_all_images": 64.424,
+   "mean_pairwise_cos": 0.866
+  }
+ ],
+ "center": {
+  "raw": {
+   "zs": [
+    43.18,
+    50.62,
+    64.19,
+    64.19
+   ],
+   "zs_mean": 55.55,
+   "clab": [
+    67.69,
+    73.07,
+    73.93,
+    79.47
+   ],
+   "clab_mean": 73.54
+  },
+  "centered (CLAB)": {
+   "zs": [
+    59.74,
+    63.64,
+    70.73,
+    70.73
+   ],
+   "zs_mean": 66.21,
+   "clab": [
+    71.02,
+    73.85,
+    74.18,
+    79.15
+   ],
+   "clab_mean": 74.55
+  },
+  "raw, remove PC1 about origin": {
+   "zs": [
+    59.71,
+    63.55,
+    70.79,
+    70.79
+   ],
+   "zs_mean": 66.21,
+   "clab": [
+    71.0,
+    73.9,
+    74.26,
+    79.16
+   ],
+   "clab_mean": 74.58
+  },
+  "raw + whitening (Lowdin)": {
+   "zs": [
+    58.93,
+    62.6,
+    70.59,
+    70.59
+   ],
+   "zs_mean": 65.68,
+   "clab": [
+    70.46,
+    74.01,
+    74.43,
+    79.22
+   ],
+   "clab_mean": 74.53
+  },
+  "centered + whitening (Lowdin)": {
+   "zs": [
+    59.26,
+    63.43,
+    69.86,
+    69.86
+   ],
+   "zs_mean": 65.6,
+   "clab": [
+    70.46,
+    73.99,
+    73.9,
+    78.81
+   ],
+   "clab_mean": 74.29
+  },
+  "centered + remove PC1 (all-but-the-top, D=1)": {
+   "zs": [
+    56.85,
+    61.27,
+    60.4,
+    60.4
+   ],
+   "zs_mean": 59.73,
+   "clab": [
+    69.72,
+    74.05,
+    69.8,
+    75.87
+   ],
+   "clab_mean": 72.36
+  },
+  "centered + remove PC1-2 (D=2)": {
+   "zs": [
+    54.01,
+    60.3,
+    56.95,
+    56.95
+   ],
+   "zs_mean": 57.05,
+   "clab": [
+    68.28,
+    74.09,
+    70.1,
+    75.98
+   ],
+   "clab_mean": 72.11
+  },
+  "centered + remove PC1-3 (D=3)": {
+   "zs": [
+    48.45,
+    55.07,
+    45.16,
+    45.16
+   ],
+   "zs_mean": 48.46,
+   "clab": [
+    66.73,
+    73.23,
+    66.29,
+    74.09
+   ],
+   "clab_mean": 70.09
+  },
+  "image centering (source mean), raw anchors": {
+   "zs": [
+    40.37,
+    47.84,
+    62.75,
+    62.93
+   ],
+   "zs_mean": 53.47,
+   "clab": [
+    66.48,
+    72.61,
+    73.74,
+    79.46
+   ],
+   "clab_mean": 73.07
+  },
+  "image centering + centered anchors": {
+   "zs": [
+    59.84,
+    62.11,
+    70.87,
+    70.52
+   ],
+   "zs_mean": 65.84,
+   "clab": [
+    71.36,
+    73.29,
+    74.69,
+    79.51
+   ],
+   "clab_mean": 74.71
+  }
+ },
+ "prompts": {
+  "a photo of {}": {
+   "cos_raw_mean": 0.806,
+   "mAP_raw": 53.728,
+   "mAP_centered": 62.887,
+   "gain": 9.159
+  },
+  "bare category name": {
+   "cos_raw_mean": 0.819,
+   "mAP_raw": 53.363,
+   "mAP_centered": 63.054,
+   "gain": 9.69
+  },
+  "a satellite image of {}": {
+   "cos_raw_mean": 0.849,
+   "mAP_raw": 45.746,
+   "mAP_centered": 60.697,
+   "gain": 14.951
+  },
+  "three aerial templates + a photo of": {
+   "cos_raw_mean": 0.852,
+   "mAP_raw": 52.713,
+   "mAP_centered": 63.697,
+   "gain": 10.984
+  },
+  "three aerial templates (used)": {
+   "cos_raw_mean": 0.863,
+   "mAP_raw": 51.187,
+   "mAP_centered": 63.583,
+   "gain": 12.395
+  },
+  "an aerial photograph containing {}": {
+   "cos_raw_mean": 0.864,
+   "mAP_raw": 53.324,
+   "mAP_centered": 63.913,
+   "gain": 10.589
+  },
+  "a remote sensing image showing {}": {
+   "cos_raw_mean": 0.869,
+   "mAP_raw": 49.291,
+   "mAP_centered": 64.279,
+   "gain": 14.988
+  }
+ },
+ "fusion_means": {
+  "minmax": 74.07,
+  "rank": 73.51,
+  "raw": 71.82,
+  "sigmoid": 71.83,
+  "zscore": 74.55
+ },
+ "perclass": [
+  {
+   "setting": "UCM->DFC15",
+   "label": "water",
+   "prevalence": 45.57,
+   "zeroshot": 91.58,
+   "probe": 94.29,
+   "clab": 94.35,
+   "d": 0.06
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "grass",
+   "prevalence": 49.59,
+   "zeroshot": 76.63,
+   "probe": 89.49,
+   "clab": 90.04,
+   "d": 0.55
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "buildings",
+   "prevalence": 45.71,
+   "zeroshot": 86.6,
+   "probe": 89.44,
+   "clab": 90.65,
+   "d": 1.21
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "trees",
+   "prevalence": 11.78,
+   "zeroshot": 53.56,
+   "probe": 38.46,
+   "clab": 47.69,
+   "d": 9.23
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "ship",
+   "prevalence": 12.33,
+   "zeroshot": 42.58,
+   "probe": 74.84,
+   "clab": 71.35,
+   "d": -3.49
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "cars",
+   "prevalence": 32.19,
+   "zeroshot": 73.41,
+   "probe": 78.89,
+   "clab": 80.85,
+   "d": 1.96
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "water",
+   "prevalence": 45.57,
+   "zeroshot": 91.58,
+   "probe": 91.56,
+   "clab": 92.48,
+   "d": 0.92
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "grass",
+   "prevalence": 49.59,
+   "zeroshot": 76.63,
+   "probe": 80.08,
+   "clab": 85.94,
+   "d": 5.85
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "buildings",
+   "prevalence": 45.71,
+   "zeroshot": 86.6,
+   "probe": 83.1,
+   "clab": 86.37,
+   "d": 3.26
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "trees",
+   "prevalence": 11.78,
+   "zeroshot": 53.56,
+   "probe": 23.0,
+   "clab": 34.63,
+   "d": 11.63
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "ship",
+   "prevalence": 12.33,
+   "zeroshot": 42.58,
+   "probe": 71.4,
+   "clab": 62.37,
+   "d": -9.03
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "cars",
+   "prevalence": 32.19,
+   "zeroshot": 73.41,
+   "probe": 74.27,
+   "clab": 83.28,
+   "d": 9.01
+  }
+ ],
+ "estimators": {
+  "rank_agreement": {
+   "mean": -0.034,
+   "improved": 2,
+   "worst": -1.08,
+   "maxabs": 1.61
+  },
+  "source_validation": {
+   "mean": -2.2,
+   "improved": 0,
+   "worst": -5.28,
+   "maxabs": 5.276
+  },
+  "shrunk_source_validation": {
+   "mean": -0.498,
+   "improved": 2,
+   "worst": -1.78,
+   "maxabs": 1.776
+  },
+  "self_training": {
+   "mean": -0.001,
+   "improved": 0,
+   "worst": -0.0,
+   "maxabs": 0.003
+  }
+ },
+ "oracle": {
+  "glob": 0.26,
+  "perclass": 2.88
+ },
+ "prop1": {
+  "rho_src": [
+   43.0,
+   48.9
+  ],
+  "rho_tgt": [
+   26.6,
+   39.3
+  ],
+  "tgtconst_mean": -0.14,
+  "tgtconst_worst": -1.13,
+  "zero_means_maxabs": 0.0
+ },
+ "perclass_all": [
+  {
+   "setting": "AID->DFC15",
+   "label": "buildings",
+   "prevalence": 45.71,
+   "zeroshot": 86.6,
+   "probe": 83.1,
+   "clab": 86.37,
+   "d": 3.26,
+   "lo": 2.75,
+   "hi": 3.77
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "cars",
+   "prevalence": 32.19,
+   "zeroshot": 73.41,
+   "probe": 74.27,
+   "clab": 83.28,
+   "d": 9.01,
+   "lo": 8.04,
+   "hi": 9.99
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "grass",
+   "prevalence": 49.59,
+   "zeroshot": 76.63,
+   "probe": 80.08,
+   "clab": 85.94,
+   "d": 5.85,
+   "lo": 5.09,
+   "hi": 6.61
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "ship",
+   "prevalence": 12.33,
+   "zeroshot": 42.58,
+   "probe": 71.4,
+   "clab": 62.37,
+   "d": -9.03,
+   "lo": -10.57,
+   "hi": -7.49
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "trees",
+   "prevalence": 11.78,
+   "zeroshot": 53.56,
+   "probe": 23.0,
+   "clab": 34.63,
+   "d": 11.63,
+   "lo": 9.85,
+   "hi": 13.4
+  },
+  {
+   "setting": "AID->DFC15",
+   "label": "water",
+   "prevalence": 45.57,
+   "zeroshot": 91.58,
+   "probe": 91.56,
+   "clab": 92.48,
+   "d": 0.92,
+   "lo": 0.72,
+   "hi": 1.11
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "airplane",
+   "prevalence": 4.76,
+   "zeroshot": 99.42,
+   "probe": 99.48,
+   "clab": 99.59,
+   "d": 0.1,
+   "lo": -0.01,
+   "hi": 0.22
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "bare-soil",
+   "prevalence": 34.19,
+   "zeroshot": 46.03,
+   "probe": 64.17,
+   "clab": 68.45,
+   "d": 4.27,
+   "lo": 3.75,
+   "hi": 4.8
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "buildings",
+   "prevalence": 32.9,
+   "zeroshot": 76.37,
+   "probe": 80.09,
+   "clab": 81.19,
+   "d": 1.1,
+   "lo": 0.6,
+   "hi": 1.6
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "cars",
+   "prevalence": 42.19,
+   "zeroshot": 81.7,
+   "probe": 86.92,
+   "clab": 91.36,
+   "d": 4.44,
+   "lo": 3.97,
+   "hi": 4.92
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "chaparral",
+   "prevalence": 5.48,
+   "zeroshot": 7.15,
+   "probe": 12.05,
+   "clab": 16.25,
+   "d": 4.2,
+   "lo": 1.48,
+   "hi": 6.92
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "court",
+   "prevalence": 5.0,
+   "zeroshot": 71.06,
+   "probe": 67.13,
+   "clab": 84.78,
+   "d": 17.65,
+   "lo": 15.07,
+   "hi": 20.23
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "dock",
+   "prevalence": 4.76,
+   "zeroshot": 47.57,
+   "probe": 73.2,
+   "clab": 65.13,
+   "d": -8.07,
+   "lo": -9.85,
+   "hi": -6.29
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "field",
+   "prevalence": 4.9,
+   "zeroshot": 13.5,
+   "probe": 33.68,
+   "clab": 26.47,
+   "d": -7.21,
+   "lo": -9.1,
+   "hi": -5.33
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "grass",
+   "prevalence": 46.43,
+   "zeroshot": 49.63,
+   "probe": 82.85,
+   "clab": 88.26,
+   "d": 5.41,
+   "lo": 4.93,
+   "hi": 5.89
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "mobile-home",
+   "prevalence": 4.86,
+   "zeroshot": 46.44,
+   "probe": 4.46,
+   "clab": 45.57,
+   "d": 41.11,
+   "lo": 36.78,
+   "hi": 45.43
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "pavement",
+   "prevalence": 61.9,
+   "zeroshot": 90.91,
+   "probe": 86.74,
+   "clab": 90.24,
+   "d": 3.5,
+   "lo": 3.05,
+   "hi": 3.95
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "sand",
+   "prevalence": 14.0,
+   "zeroshot": 44.42,
+   "probe": 53.57,
+   "clab": 53.47,
+   "d": -0.1,
+   "lo": -0.47,
+   "hi": 0.26
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "sea",
+   "prevalence": 4.76,
+   "zeroshot": 97.57,
+   "probe": 93.26,
+   "clab": 96.53,
+   "d": 3.26,
+   "lo": 2.44,
+   "hi": 4.08
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "ship",
+   "prevalence": 4.86,
+   "zeroshot": 63.96,
+   "probe": 71.7,
+   "clab": 73.71,
+   "d": 2.01,
+   "lo": 0.59,
+   "hi": 3.42
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "tanks",
+   "prevalence": 4.76,
+   "zeroshot": 69.3,
+   "probe": 76.55,
+   "clab": 83.55,
+   "d": 7.0,
+   "lo": 5.75,
+   "hi": 8.24
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "trees",
+   "prevalence": 48.05,
+   "zeroshot": 73.32,
+   "probe": 85.18,
+   "clab": 90.41,
+   "d": 5.23,
+   "lo": 4.83,
+   "hi": 5.62
+  },
+  {
+   "setting": "AID->UCM",
+   "label": "water",
+   "prevalence": 9.67,
+   "zeroshot": 37.3,
+   "probe": 44.99,
+   "clab": 52.4,
+   "d": 7.41,
+   "lo": 6.61,
+   "hi": 8.21
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "airplane",
+   "prevalence": 3.3,
+   "zeroshot": 78.73,
+   "probe": 88.88,
+   "clab": 88.37,
+   "d": -0.51,
+   "lo": -1.08,
+   "hi": 0.07
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "bare-soil",
+   "prevalence": 49.17,
+   "zeroshot": 45.2,
+   "probe": 72.6,
+   "clab": 66.59,
+   "d": -6.0,
+   "lo": -6.4,
+   "hi": -5.61
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "buildings",
+   "prevalence": 72.03,
+   "zeroshot": 97.01,
+   "probe": 96.28,
+   "clab": 97.23,
+   "d": 0.96,
+   "lo": 0.87,
+   "hi": 1.05
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "cars",
+   "prevalence": 67.53,
+   "zeroshot": 91.69,
+   "probe": 96.25,
+   "clab": 96.6,
+   "d": 0.36,
+   "lo": 0.22,
+   "hi": 0.49
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "chaparral",
+   "prevalence": 3.73,
+   "zeroshot": 5.3,
+   "probe": 3.61,
+   "clab": 3.89,
+   "d": 0.28,
+   "lo": 0.17,
+   "hi": 0.39
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "court",
+   "prevalence": 11.47,
+   "zeroshot": 22.6,
+   "probe": 57.43,
+   "clab": 54.59,
+   "d": -2.84,
+   "lo": -3.55,
+   "hi": -2.13
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "dock",
+   "prevalence": 9.03,
+   "zeroshot": 64.45,
+   "probe": 60.26,
+   "clab": 69.25,
+   "d": 8.99,
+   "lo": 6.2,
+   "hi": 11.78
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "field",
+   "prevalence": 7.13,
+   "zeroshot": 15.26,
+   "probe": 43.78,
+   "clab": 41.14,
+   "d": -2.63,
+   "lo": -3.73,
+   "hi": -1.54
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "grass",
+   "prevalence": 76.5,
+   "zeroshot": 80.23,
+   "probe": 94.27,
+   "clab": 92.96,
+   "d": -1.3,
+   "lo": -1.43,
+   "hi": -1.17
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "mobile-home",
+   "prevalence": 0.07,
+   "zeroshot": 0.88,
+   "probe": 0.23,
+   "clab": 0.48,
+   "d": NaN,
+   "lo": NaN,
+   "hi": NaN
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "pavement",
+   "prevalence": 77.6,
+   "zeroshot": 93.2,
+   "probe": 98.75,
+   "clab": 98.86,
+   "d": 0.11,
+   "lo": 0.07,
+   "hi": 0.14
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "sand",
+   "prevalence": 8.63,
+   "zeroshot": 90.94,
+   "probe": 89.06,
+   "clab": 92.97,
+   "d": 3.92,
+   "lo": 3.23,
+   "hi": 4.61
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "sea",
+   "prevalence": 7.37,
+   "zeroshot": 91.51,
+   "probe": 75.99,
+   "clab": 83.04,
+   "d": 7.05,
+   "lo": 6.28,
+   "hi": 7.82
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "ship",
+   "prevalence": 9.47,
+   "zeroshot": 63.36,
+   "probe": 65.59,
+   "clab": 71.19,
+   "d": 5.6,
+   "lo": 3.5,
+   "hi": 7.7
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "tanks",
+   "prevalence": 3.6,
+   "zeroshot": 65.0,
+   "probe": 87.3,
+   "clab": 89.73,
+   "d": 2.43,
+   "lo": 1.84,
+   "hi": 3.03
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "trees",
+   "prevalence": 80.2,
+   "zeroshot": 80.89,
+   "probe": 96.3,
+   "clab": 94.8,
+   "d": -1.49,
+   "lo": -1.58,
+   "hi": -1.41
+  },
+  {
+   "setting": "UCM->AID",
+   "label": "water",
+   "prevalence": 28.4,
+   "zeroshot": 53.94,
+   "probe": 63.08,
+   "clab": 64.99,
+   "d": 1.91,
+   "lo": 1.44,
+   "hi": 2.39
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "buildings",
+   "prevalence": 45.71,
+   "zeroshot": 86.6,
+   "probe": 89.44,
+   "clab": 90.65,
+   "d": 1.21,
+   "lo": 1.04,
+   "hi": 1.38
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "cars",
+   "prevalence": 32.19,
+   "zeroshot": 73.41,
+   "probe": 78.89,
+   "clab": 80.85,
+   "d": 1.96,
+   "lo": 1.35,
+   "hi": 2.56
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "grass",
+   "prevalence": 49.59,
+   "zeroshot": 76.63,
+   "probe": 89.49,
+   "clab": 90.04,
+   "d": 0.55,
+   "lo": 0.31,
+   "hi": 0.79
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "ship",
+   "prevalence": 12.33,
+   "zeroshot": 42.58,
+   "probe": 74.84,
+   "clab": 71.35,
+   "d": -3.49,
+   "lo": -4.64,
+   "hi": -2.35
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "trees",
+   "prevalence": 11.78,
+   "zeroshot": 53.56,
+   "probe": 38.46,
+   "clab": 47.69,
+   "d": 9.23,
+   "lo": 7.91,
+   "hi": 10.54
+  },
+  {
+   "setting": "UCM->DFC15",
+   "label": "water",
+   "prevalence": 45.57,
+   "zeroshot": 91.58,
+   "probe": 94.29,
+   "clab": 94.35,
+   "d": 0.06,
+   "lo": -0.06,
+   "hi": 0.18
+  }
+ ],
+ "source_budget": {
+  "AID->DFC15|clip_vitb32_control|20": {
+   "src_train_mAP": 94.8,
+   "tgt_linear_mAP": 70.21
+  },
+  "AID->DFC15|clip_vitb32_control|50": {
+   "src_train_mAP": 95.61,
+   "tgt_linear_mAP": 70.98
+  },
+  "AID->DFC15|clip_vitb32_control|100": {
+   "src_train_mAP": 96.33,
+   "tgt_linear_mAP": 71.6
+  },
+  "AID->DFC15|clip_vitb32_control|200": {
+   "src_train_mAP": 97.03,
+   "tgt_linear_mAP": 71.55
+  },
+  "AID->DFC15|clip_vitb32_control|400": {
+   "src_train_mAP": 97.69,
+   "tgt_linear_mAP": 70.61
+  },
+  "AID->DFC15|clip_vitb32_control|800": {
+   "src_train_mAP": 98.31,
+   "tgt_linear_mAP": 68.66
+  },
+  "AID->DFC15|remoteclip_vitb32|20": {
+   "src_train_mAP": 95.76,
+   "tgt_linear_mAP": 62.33
+  },
+  "AID->DFC15|remoteclip_vitb32|50": {
+   "src_train_mAP": 96.49,
+   "tgt_linear_mAP": 62.31
+  },
+  "AID->DFC15|remoteclip_vitb32|100": {
+   "src_train_mAP": 97.17,
+   "tgt_linear_mAP": 62.45
+  },
+  "AID->DFC15|remoteclip_vitb32|200": {
+   "src_train_mAP": 97.83,
+   "tgt_linear_mAP": 62.65
+  },
+  "AID->DFC15|remoteclip_vitb32|400": {
+   "src_train_mAP": 98.41,
+   "tgt_linear_mAP": 62.59
+  },
+  "AID->DFC15|remoteclip_vitb32|800": {
+   "src_train_mAP": 98.9,
+   "tgt_linear_mAP": 61.72
+  },
+  "AID->UCM|clip_vitb32_control|20": {
+   "src_train_mAP": 86.24,
+   "tgt_linear_mAP": 64.91
+  },
+  "AID->UCM|clip_vitb32_control|50": {
+   "src_train_mAP": 90.34,
+   "tgt_linear_mAP": 65.68
+  },
+  "AID->UCM|clip_vitb32_control|100": {
+   "src_train_mAP": 93.52,
+   "tgt_linear_mAP": 65.43
+  },
+  "AID->UCM|clip_vitb32_control|200": {
+   "src_train_mAP": 94.82,
+   "tgt_linear_mAP": 64.41
+  },
+  "AID->UCM|clip_vitb32_control|400": {
+   "src_train_mAP": 96.17,
+   "tgt_linear_mAP": 62.94
+  },
+  "AID->UCM|clip_vitb32_control|800": {
+   "src_train_mAP": 97.45,
+   "tgt_linear_mAP": 61.34
+  },
+  "AID->UCM|remoteclip_vitb32|20": {
+   "src_train_mAP": 87.11,
+   "tgt_linear_mAP": 76.81
+  },
+  "AID->UCM|remoteclip_vitb32|50": {
+   "src_train_mAP": 93.39,
+   "tgt_linear_mAP": 78.56
+  },
+  "AID->UCM|remoteclip_vitb32|100": {
+   "src_train_mAP": 94.94,
+   "tgt_linear_mAP": 79.17
+  },
+  "AID->UCM|remoteclip_vitb32|200": {
+   "src_train_mAP": 96.11,
+   "tgt_linear_mAP": 79.28
+  },
+  "AID->UCM|remoteclip_vitb32|400": {
+   "src_train_mAP": 97.25,
+   "tgt_linear_mAP": 78.87
+  },
+  "AID->UCM|remoteclip_vitb32|800": {
+   "src_train_mAP": 98.28,
+   "tgt_linear_mAP": 77.41
+  },
+  "UCM->AID|clip_vitb32_control|20": {
+   "src_train_mAP": 97.08,
+   "tgt_linear_mAP": 72.01
+  },
+  "UCM->AID|clip_vitb32_control|50": {
+   "src_train_mAP": 97.79,
+   "tgt_linear_mAP": 71.93
+  },
+  "UCM->AID|clip_vitb32_control|100": {
+   "src_train_mAP": 98.34,
+   "tgt_linear_mAP": 71.67
+  },
+  "UCM->AID|clip_vitb32_control|200": {
+   "src_train_mAP": 98.85,
+   "tgt_linear_mAP": 71.41
+  },
+  "UCM->AID|clip_vitb32_control|400": {
+   "src_train_mAP": 99.26,
+   "tgt_linear_mAP": 71.13
+  },
+  "UCM->AID|clip_vitb32_control|800": {
+   "src_train_mAP": 99.53,
+   "tgt_linear_mAP": 70.77
+  },
+  "UCM->AID|remoteclip_vitb32|20": {
+   "src_train_mAP": 97.89,
+   "tgt_linear_mAP": 75.07
+  },
+  "UCM->AID|remoteclip_vitb32|50": {
+   "src_train_mAP": 98.43,
+   "tgt_linear_mAP": 74.89
+  },
+  "UCM->AID|remoteclip_vitb32|100": {
+   "src_train_mAP": 98.84,
+   "tgt_linear_mAP": 74.67
+  },
+  "UCM->AID|remoteclip_vitb32|200": {
+   "src_train_mAP": 99.19,
+   "tgt_linear_mAP": 74.47
+  },
+  "UCM->AID|remoteclip_vitb32|400": {
+   "src_train_mAP": 99.47,
+   "tgt_linear_mAP": 74.16
+  },
+  "UCM->AID|remoteclip_vitb32|800": {
+   "src_train_mAP": 99.67,
+   "tgt_linear_mAP": 73.66
+  },
+  "UCM->DFC15|clip_vitb32_control|20": {
+   "src_train_mAP": 97.37,
+   "tgt_linear_mAP": 77.91
+  },
+  "UCM->DFC15|clip_vitb32_control|50": {
+   "src_train_mAP": 98.08,
+   "tgt_linear_mAP": 77.52
+  },
+  "UCM->DFC15|clip_vitb32_control|100": {
+   "src_train_mAP": 98.6,
+   "tgt_linear_mAP": 76.9
+  },
+  "UCM->DFC15|clip_vitb32_control|200": {
+   "src_train_mAP": 99.05,
+   "tgt_linear_mAP": 76.22
+  },
+  "UCM->DFC15|clip_vitb32_control|400": {
+   "src_train_mAP": 99.4,
+   "tgt_linear_mAP": 75.27
+  },
+  "UCM->DFC15|clip_vitb32_control|800": {
+   "src_train_mAP": 99.65,
+   "tgt_linear_mAP": 74.38
+  },
+  "UCM->DFC15|remoteclip_vitb32|20": {
+   "src_train_mAP": 98.29,
+   "tgt_linear_mAP": 78.94
+  },
+  "UCM->DFC15|remoteclip_vitb32|50": {
+   "src_train_mAP": 98.74,
+   "tgt_linear_mAP": 78.69
+  },
+  "UCM->DFC15|remoteclip_vitb32|100": {
+   "src_train_mAP": 99.03,
+   "tgt_linear_mAP": 78.44
+  },
+  "UCM->DFC15|remoteclip_vitb32|200": {
+   "src_train_mAP": 99.32,
+   "tgt_linear_mAP": 78.03
+  },
+  "UCM->DFC15|remoteclip_vitb32|400": {
+   "src_train_mAP": 99.56,
+   "tgt_linear_mAP": 77.49
+  },
+  "UCM->DFC15|remoteclip_vitb32|800": {
+   "src_train_mAP": 99.75,
+   "tgt_linear_mAP": 76.63
+  }
+ },
+ "budget_means": {
+  "20": 74.38,
+  "50": 74.55,
+  "100": 74.41,
+  "200": 74.01
+ },
+ "contam": {
+  "ucm": [
+   24.603844141722718,
+   14.884631190487639
+  ],
+  "aid": [
+   5.8661723892662465,
+   2.95406453161047
+  ],
+  "dfc": [
+   0.7760380135157021,
+   -10.818602085394268,
+   0.39689869235604647
+  ]
+ },
+ "centering_gain_zs": {
+  "AID->UCM": 16.56,
+  "UCM->AID": 13.02,
+  "AID->DFC15": 6.53,
+  "UCM->DFC15": 6.53
+ },
+ "centering_gain_zs_rc": {
+  "AID->UCM": 12.23,
+  "UCM->AID": 7.31,
+  "AID->DFC15": 21.23,
+  "UCM->DFC15": 21.23
+ }
+}

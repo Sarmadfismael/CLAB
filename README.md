@@ -4,12 +4,20 @@ Code, cached features, split definitions and per-seed results for the paper
 
 > A. Güneş, S. F. Ismael, M. Üstüner. *Multi-Label Remote Sensing Scene Classification Without Target Data via Centered Vision–Language Anchors.* Under review, 2026.
 
+> **Revision 1 (R1) update.** This release reproduces the revised manuscript. The CLIP ViT-B/32
+> features of the first release had been extracted with OpenCLIP's `ViT-B-32` configuration, which
+> pairs the OpenAI weights with the standard GELU activation; the weights were trained with
+> QuickGELU (`ViT-B-32-quickgelu`). The CLIP ViT-B/32 image features and text anchors in
+> `features/` were re-extracted with QuickGELU and every result in `results/` was recomputed. The
+> RemoteCLIP features (loaded as in RemoteCLIP's official code) and the ImageNet, SatMAE and CLIP
+> RN50 image features are unchanged. See `CHANGELOG.md`.
+
 CLAB (CLIP Label-Anchor Blending) labels remote sensing tiles from a new acquisition without
 seeing any of it during training. It combines two branches on a frozen CLIP image embedding:
 
 1. a **semantic branch** that scores each class by cosine similarity with its class-name
    anchor, after the anchors are **mean-centered and renormalized** (this removes a dominant
-   shared direction that holds about 90% of the anchor variance);
+   shared direction that holds about 87% of the anchors' second moment);
 2. a **linear source head** trained on the labeled source dataset for a short fixed budget.
 
 Both branches are standardized with one location and one scale estimated on **source**
@@ -51,24 +59,40 @@ runs behind Table 4.
 
 ## 2. Where each number in the paper comes from
 
-| Paper item | Script | Output in `results/` |
-|---|---|---|
-| Table 1 (datasets) | `experiments/e10_dataset_stats.py --data-root DIR` (needs the label files) | `datasets.csv` |
-| Table 2 (main results), Table 3 (paired, Holm), Table 5 (ablation), zero-shot centering gains (Section 6.2) | `experiments/e01_main_grid.py` | `main_grid.csv` |
-| Table 4 (oracle-tuned CLIP-Adapter / Tip-Adapter) | `experiments/e03_adapters.py` | `adapters_sweep.csv`, `adapters20.csv` |
-| Table 6 (leave-one-transfer-out), Table 7 (alpha and budget sensitivity) | `experiments/e02_loto.py` | `loto_raw.csv`, `loto_selected.csv` |
-| Table 8 (out-of-vocabulary imagery restored) and the alpha trade-off | `experiments/e04_robustness.py` | `robust_mismatch.csv`, `robust_standard.csv` |
-| Table 9 (published results) | literature values, see `supplementary/published_results.csv` | – |
-| Table 10 (eight frozen backbones) | `extraction/backbone_study.py --data-root DIR` (GPU, images) | `backbone_study.csv` |
-| Table 11, Figure 3 (anchor geometry), choice of centering set | `experiments/e09_geometry.py`, `tools/make_fig_anchors.py` | `geometry_*.csv`, `fig_anchors.pdf` |
-| Table 12 (prompt families), DFC15 vocabulary variant | `extraction/prompt_ablation.py` (text encoder) | `prompt_ablation.csv`, `vocabulary_variant.csv` |
-| Table 13 (fusion rule) | `experiments/e05_fusion.py` | `fusion.csv` |
-| Table 14 (per-class AP), Proposition 1 measurements | `experiments/e06_perclass_invariance.py` | `perclass.csv`, `invariance.csv` |
-| Source-head budget sweep (Section 6.6) | `experiments/e07_source_budget.py` | `source_budget.csv` |
-| Oracle alpha and Table 15 (label-free estimators) | `experiments/e08_alpha_estimators.py` | `alpha_oracle.csv`, `alpha_estimators.csv` |
-| Table 16 (contamination audit) | computed from `main_grid.csv` and `backbone_study.csv` | – |
+Table and section numbers refer to the **revised manuscript (R1)**.
 
-`python tools/make_tables.py` prints every table above from the CSVs in `results/`.
+| Paper item | Script | Output |
+|---|---|---|
+| Table 1 (datasets) | `experiments/e10_dataset_stats.py --data-root DIR` (needs the label files) | `results/datasets.csv` |
+| Tables 2, 3 and 6 (main results, paired Holm, ablation); zero-shot centering gains (Section 6.2) | `experiments/e01_main_grid.py` | `results/main_grid.csv` |
+| Table 4 (whole-target evaluation, two-stage bootstrap), Table A1 (per-class AP, all transfers) | `r1/a5_bootstrap_perclass.py` | `r1/out/a5_*.csv` |
+| Table 5, upper block (oracle-tuned CLIP-Adapter / Tip-Adapter) | `experiments/e03_adapters.py` | `results/adapters_sweep.csv`, `results/adapters20.csv` |
+| Table 5, lower block (CoOp-sigmoid, DualCoOp-global; needs torch and the CLIP text encoder) | `r1/c2_promptlearn.py sweep` then `final` | `r1/out/c2_*.csv` |
+| Tables 7 and 9 (leave-one-transfer-out, sensitivity) | `experiments/e02_loto.py` | `results/loto_*.csv` |
+| Table 8 (leave-one-out over six transfers), leave-one-dataset-out (Section 5.5) | `r1/a9_loto6.py`, `r1/a12_lodo.py` | `r1/out/a9_*.csv`, `r1/out/a12_lodo.csv` |
+| Source-size sweep (Section 5.6) | `r1/a7_source_size.py` | `r1/out/a7_source_size.csv` |
+| Table 10 (out-of-vocabulary imagery restored) | `experiments/e04_robustness.py` | `results/robust_*.csv` |
+| Table 11 (hard thresholds from source data, CF1/OF1) | `r1/a1_thresholds.py` | `r1/out/a1_thresholds.csv` |
+| Table 12 (published results, context only) | literature values | `supplementary/published_results.csv` |
+| Table 13 (DDA-MLIC and DANN re-run on the CLIP features) | `r1/c3_uda.py` | `r1/out/c3_uda_ddamlic_dann.csv` |
+| Table 14 (eight frozen backbones) | `extraction/backbone_study.py --data-root DIR` (GPU, images); CLIP ViT-B/32 row from cached features: `r1/b1_backbone_clip.py` | `results/backbone_study.csv` |
+| Table 15, Figure 2 (anchor geometry), centering set | `experiments/e09_geometry.py`, `tools/make_fig_anchors.py`; raw-about-mean row: `r1/a6_centering_alternatives.py` | `results/geometry_*.csv` |
+| Table 16 (alternatives to centering) | `r1/a6_centering_alternatives.py` | `r1/out/a6_centering.csv` |
+| Table 17 (prompt families), DFC15 vocabulary variant | `r1/b2_prompts.py` (text encoder) | `results/prompt_ablation.csv`, `results/vocabulary_variant.csv` |
+| Table 18 (fusion rule) | `experiments/e05_fusion.py` | `results/fusion.csv` |
+| Table 19 (per-class AP, DFC15), Proposition 1 measurements | `experiments/e06_perclass_invariance.py` | `results/perclass.csv`, `results/invariance.csv` |
+| Table 20, Table A2 (synonym anchors) | `r1/c1_synonyms.py` (text encoder) | `r1/out/c1_synonyms*.csv` |
+| Table 21 (label-free estimators), oracle weights | `experiments/e08_alpha_estimators.py` | `results/alpha_*.csv` |
+| Table 22 (contamination audit) | from `main_grid.csv` and `backbone_study.csv` | – |
+| Source-head budget (Section 6.6); ridge / weight-decay heads; per-class standardization; whole-target means | `experiments/e07_source_budget.py`; `r1/a2_head_norm_eval.py` | `results/source_budget.csv`; `r1/out/a2_heads.csv`, `a3_perclass_z.csv`, `a4_full_target.csv` |
+| Co-occurrence prior (Section 6.8) | `r1/a8_cooccurrence.py` | `r1/out/a8_cooc.csv` |
+| Figures 4 and 5 (confusion, examples) | `r1/a11_examples.py`, `r1/a11b_pick.py`, `r1/f1_figures.py` (example tiles from the datasets) | `r1/out/a11_*` |
+| Computational cost (Section 3.6) | `r1/a10_cost.py` | printed |
+| LaTeX table bodies of the revised paper | `r1/gen_tables.py`, `r1/gen_extra.py` | `r1/out/tables_*.json` |
+
+`python tools/make_tables.py` prints the tables of the `experiments/` scripts from `results/`.
+The `r1/` scripts read `features/` and `results/` and write to `r1/out/` (override with
+`CLAB_FEATURES`, `CLAB_RESULTS`, `R1_OUT`).
 
 ## 3. Protocol
 
@@ -118,9 +142,9 @@ i-th smallest p-value receives a two-sided interval at level 1 − 0.05/(8 − i
 
 | Name in this repository | Model | Weights |
 |---|---|---|
-| `clip_vitb32_control` (headline) | CLIP ViT-B/32 | OpenCLIP `ViT-B-32`, `pretrained="openai"` |
+| `clip_vitb32_control` (headline) | CLIP ViT-B/32 | OpenCLIP `ViT-B-32-quickgelu`, `pretrained="openai"` |
 | `remoteclip_vitb32` (diagnostic) | RemoteCLIP ViT-B/32 | Hugging Face `chendelong/RemoteCLIP`, file `RemoteCLIP-ViT-B-32.pt` |
-| `clip_rn50_control` | CLIP RN50 | OpenCLIP `RN50`, `pretrained="openai"` |
+| `clip_rn50_control` | CLIP RN50 | OpenCLIP `RN50-quickgelu`, `pretrained="openai"` |
 | `remoteclip_rn50` | RemoteCLIP RN50 | `chendelong/RemoteCLIP`, `RemoteCLIP-RN50.pt` |
 | `remoteclip_vitl14` | RemoteCLIP ViT-L/14 | `chendelong/RemoteCLIP`, `RemoteCLIP-ViT-L-14.pt` |
 | `imagenet_tresnet_m` | TResNet-M, ImageNet-1K | timm `tresnet_m` |
@@ -163,7 +187,8 @@ splits/          per-image split membership for every seed
 results/         per-seed results behind every number in the paper
 supplementary/   values reproduced from the literature (Table 9) and the end-to-end
                  retraining variability quoted in the paper
-tools/           table builder, split exporter, Figure 3
+tools/           table builder, split exporter, anchor figure
+r1/              analyses added in the first revision, re-implemented CLIP encoders, outputs in r1/out/
 ```
 
 ## 7. Notes
